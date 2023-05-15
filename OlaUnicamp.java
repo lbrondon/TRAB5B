@@ -1,5 +1,3 @@
-package br.unicamp.ic.inf335.TRAB5B;
-
 public class OlaUnicamp {
 
 	public static void main(String[] args) {
