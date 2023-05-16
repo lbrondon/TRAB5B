@@ -4,8 +4,8 @@ pipeline {
   }
   stages {
     stage("Build") {
-      git branch: 'main', url:'https://github.com/lbrondon/TRAB5B'
       steps {
+        git branch: 'main', url:'https://github.com/lbrondon/TRAB5B'
         script {
           dockerImage = docker.build("OlaUnicamp")
         }
