@@ -1,18 +1,20 @@
 pipeline {
-  agent {label "linux"}
+  agent {
+    label "linux"
+  }
   stages {
-    stage ("build") {
+    stage("Build") {
       steps {
-        sh """
-          docker build -t OlaUnicamp .
-        """
+        script {
+          dockerImage = docker.build("OlaUnicamp")
+        }
       }
     }
-    stage ("run") {
+    stage("Run") {
       steps {
-        sh """
-          docker run --rm OlaUnicamp
-        """
+        script {
+          dockerImage.run("--rm")
+        }
       }
     }
   }
